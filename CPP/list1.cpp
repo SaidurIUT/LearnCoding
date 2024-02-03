@@ -18,7 +18,7 @@ void display(list<int>&lst){
 
 int main(){
     list<int>list1; // list of 0 length
-    list<int> list2(7); // empty list of size 7
+    list<int> list2(7,2); // empty list of size 7
 
     list1.push_back(5);
     list1.push_back(7);
