@@ -20,7 +20,7 @@ public:
 
         // create an edge from u to v
 
-        adj[u].push_back(u);
+        adj[u].push_back(v);
         if(direction==0){
             adj[v].push_back(u);
         }
