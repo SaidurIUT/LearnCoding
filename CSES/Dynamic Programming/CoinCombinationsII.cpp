@@ -6,12 +6,9 @@ ll solve(ll n , ll x ,vector<ll>&coins){
     ll mod = 1e9 +7; 
     vector<ll> dp(x+1,0);
     dp[0]=1;
-    for(ll i = 1 ; i <= x ; i++){
-        for(ll j = 0; j< n ; j++ ){
-            if(coins[j]> i ){
-                continue;
-            }
-            dp[i] = (dp[i] + dp[i - coins[j]])%mod;
+    for(ll i = 0 ; i < n ; i++){
+        for(ll j = coins[i]; j<= x ; j++ ){
+            dp[j] = (dp[j] + dp[j - coins[i]])%mod;
         }
     }
 
