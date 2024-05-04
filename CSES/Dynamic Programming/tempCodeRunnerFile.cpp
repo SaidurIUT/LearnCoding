@@ -9,9 +9,9 @@ ll solve (int n , int x , vector <ll>& coins){
     dp[0]=0;
     for(int weight= 1 ; weight <= x ; weight++){
         for(int i = 0 ; i < n ; i++){
-            if (coins[i] > weight || dp[weight - coins[i]] == INT_MAX)
-                continue;
-            dp[weight] = min(dp[weight], dp[weight - coins[i]] + 1);
+            if( weight - coins[i-1] >= 0 ){
+                dp[weight] = min(dp[weight],dp[weight-coins[i]]+1);
+            }
         }
     }
 
@@ -28,4 +28,3 @@ int main(){
     cout<<solve(n,x,coins);
 
 }
-
